@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { motion } from "framer-motion";
+import { motion, easeInOut } from "framer-motion";
 
 type Skill = {
   id: string;
@@ -90,7 +90,7 @@ const breathing = {
   transition: {
     duration: 2.5,
     repeat: Infinity,
-    ease: "easeInOut",
+    ease: easeInOut,
   },
 };
 

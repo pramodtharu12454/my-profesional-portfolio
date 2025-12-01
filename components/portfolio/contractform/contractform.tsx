@@ -9,7 +9,7 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 // LEFT: INQUIRY FORM
 function InquiryForm() {
   return (
-    <Card className="w-full p-8 bg-[#090E19] shadow-[0_0_20px_#00ff88] hover:shadow-[0_0_35px_#00ff88] border border-[#00ff88]/40 transition-all duration-300 text-white shadow-xl rounded-2xl">
+    <Card className="w-full p-8 bg-[#090E19] `shadow-[0_0_20px_#00ff88]` hover:shadow-[0_0_35px_#00ff88] border border-[#00ff88]/40 transition-all duration-300 text-white shadow-xl rounded-2xl">
       <CardHeader>
         <CardTitle className="text-3xl font-bold text-blue-300">
           Inquiry

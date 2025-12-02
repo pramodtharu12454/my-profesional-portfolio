@@ -43,7 +43,7 @@ const blogs = [
   {
     id: 5,
     title: "From BBM Student to Full-Time IT Learner",
-    desc: "I joined BBM 1st semester, but destiny pulled me towards IT. Leaving BBM was difficult, but choosing IT gave me purpose and direction.",
+    desc: "I joined BBM 1st semester in lumbini banijya campus, but destiny pulled me towards IT. Leaving BBM was difficult, but choosing IT gave me purpose and direction.",
     image: "/blog/lumbinibanijya.webp",
     tag: "Career Switch",
   },

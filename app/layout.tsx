@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import SidebarLayout from "@/components/portfolio/navbar/siderbar";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -94,7 +95,10 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <SidebarLayout>{children}</SidebarLayout>
+        <ThemeProvider>
+          {/* 🔥 Your sidebar/navbar has theme toggle inside */}
+          <SidebarLayout>{children}</SidebarLayout>
+        </ThemeProvider>
       </body>
     </html>
   );

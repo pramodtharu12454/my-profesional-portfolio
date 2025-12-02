@@ -9,28 +9,43 @@ import { MapPin, Phone, Mail, Clock } from "lucide-react";
 // LEFT: INQUIRY FORM
 function InquiryForm() {
   return (
-    <Card className="w-full p-8 bg-[#090E19] `shadow-[0_0_20px_#00ff88]` hover:shadow-[0_0_35px_#00ff88] border border-[#00ff88]/40 transition-all duration-300 text-white shadow-xl rounded-2xl">
+    <Card className="w-full p-8 bg-white dark:bg-[#090E19] shadow-[0_0_20px_#00ff88] hover:shadow-[0_0_35px_#00ff88] border border-[#00ff88]/40 transition-all duration-300 text-gray-900 dark:text-white shadow-xl rounded-2xl">
       <CardHeader>
-        <CardTitle className="text-3xl font-bold text-blue-300">
+        <CardTitle className="text-3xl font-bold text-blue-500 dark:text-blue-300">
           Inquiry
         </CardTitle>
       </CardHeader>
 
       <CardContent className="space-y-5">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <Input placeholder="First Name" className="p-3 rounded-xl" />
-          <Input placeholder="Last Name" className="p-3 rounded-xl" />
+          <Input
+            placeholder="First Name"
+            className="p-3 rounded-xl bg-gray-100 dark:bg-[#0B1323] text-gray-900 dark:text-white border border-gray-300 dark:border-[#1A2335]"
+          />
+          <Input
+            placeholder="Last Name"
+            className="p-3 rounded-xl bg-gray-100 dark:bg-[#0B1323] text-gray-900 dark:text-white border border-gray-300 dark:border-[#1A2335]"
+          />
         </div>
-        <Input placeholder="Email" className="p-3 rounded-xl" />
-        <Input placeholder="Phone" className="p-3 rounded-xl" />
-        <Input placeholder="Travel Destination" className="p-3 rounded-xl" />
+        <Input
+          placeholder="Email"
+          className="p-3 rounded-xl bg-gray-100 dark:bg-[#0B1323] text-gray-900 dark:text-white border border-gray-300 dark:border-[#1A2335]"
+        />
+        <Input
+          placeholder="Phone"
+          className="p-3 rounded-xl bg-gray-100 dark:bg-[#0B1323] text-gray-900 dark:text-white border border-gray-300 dark:border-[#1A2335]"
+        />
+        <Input
+          placeholder="Travel Destination"
+          className="p-3 rounded-xl bg-gray-100 dark:bg-[#0B1323] text-gray-900 dark:text-white border border-gray-300 dark:border-[#1A2335]"
+        />
 
         <Textarea
           placeholder="Tell us about your dream vacation..."
-          className="p-3 rounded-xl min-h-[140px]"
+          className="p-3 rounded-xl min-h-[140px] bg-gray-100 dark:bg-[#0B1323] text-gray-900 dark:text-white border border-gray-300 dark:border-[#1A2335]"
         />
 
-        <Button className="w-full p-3 rounded-xl text-lg font-semibold bg-green-600 hover:bg-green-700 text-white shadow-[0_0_15px_#00ff80]">
+        <Button className="w-full p-3 rounded-xl text-lg font-semibold bg-green-600 hover:bg-green-700 text-white shadow-[0_0_15px_#00ff80] transition-colors duration-300">
           Send Message
         </Button>
       </CardContent>
@@ -41,7 +56,7 @@ function InquiryForm() {
 // RIGHT: DETAILS COMPONENT
 function ContactInfo() {
   const cardClass =
-    "p-6 bg-[#090E19] shadow-[0_0_20px_#00ff88] hover:shadow-[0_0_35px_#00ff88] border border-[#00ff88]/40 transition-all duration-300 text-white shadow-lg rounded-2xl";
+    "p-6 bg-white dark:bg-[#090E19] shadow-[0_0_20px_#00ff88] hover:shadow-[0_0_35px_#00ff88] border border-[#00ff88]/40 transition-all duration-300 text-gray-900 dark:text-white shadow-lg rounded-2xl";
 
   return (
     <div className="space-y-6">

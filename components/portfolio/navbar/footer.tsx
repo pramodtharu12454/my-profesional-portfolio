@@ -5,7 +5,7 @@ import { Facebook, Instagram, Github } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="relative w-full text-white bg-gray-900">
+    <footer className="relative w-full text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-900">
       {/* Background Image */}
       <div className="absolute inset-0">
         <Image
@@ -35,7 +35,7 @@ export default function Footer() {
             <a href="#" className="hover:text-pink-500">
               <Instagram size={24} />
             </a>
-            <a href="#" className="hover:text-gray-400">
+            <a href="#" className="hover:text-gray-400 dark:hover:text-white">
               <Github size={24} />
             </a>
           </div>
@@ -59,22 +59,23 @@ export default function Footer() {
         {/* RIGHT : MAP */}
         <div>
           <h3 className="font-semibold text-lg mb-3">Our Location</h3>
-
-          <div className="w-full h-64 rounded-xl overflow-hidden shadow-lg border border-gray-700">
+          <div className="w-full h-64 rounded-xl overflow-hidden shadow-lg border border-gray-300 dark:border-gray-700">
             <iframe
-              src="https://www.google.com/maps/place/Samjhauta+Marg,+Kathmandu+44600/@27.7274948,85.3094084,874m/data=!3m2!1e3!4b1!4m6!3m5!1s0x39eb18e08f344a2f:0xecd102ae6a3d2e6e!8m2!3d27.7274948!4d85.3119887!16s%2Fg%2F11vjtdgm0z"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3531.112625065017!2d85.30940838452617!3d27.727494779275687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39eb18e08f344a2f%3A0xecd102ae6a3d2e6e!2sSamjhauta%20Marg%2C%20Kathmandu%2044600!5e0!3m2!1sen!2snp!4v1701535600000!5m2!1sen!2snp"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Samjhauta Marg, Kathmandu"
             ></iframe>
           </div>
         </div>
       </div>
 
-      {/* SECOND ROW (NEW ROW BY YOUR REQUEST) */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 pb-14 grid grid-cols-1 md:grid-cols-3 gap-10 border-t border-gray-700 pt-10">
+      {/* SECOND ROW */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 pb-14 grid grid-cols-1 md:grid-cols-3 gap-10 border-t border-gray-300 dark:border-gray-700 pt-10">
         {/* Email */}
         <div>
           <h3 className="font-semibold text-lg mb-1">Email Us</h3>
@@ -106,8 +107,8 @@ export default function Footer() {
       </div>
 
       {/* BOTTOM COPYRIGHT */}
-      <div className="relative z-10 text-center text-gray-300 text-sm py-4 border-t border-gray-700">
-        © 2025 Your Company. All rights reserved.
+      <div className="relative z-10 text-center text-gray-500 dark:text-gray-300 text-sm py-4 border-t border-gray-300 dark:border-gray-700">
+        © 2025 All rights reserved by Pramod Tharu.
       </div>
     </footer>
   );

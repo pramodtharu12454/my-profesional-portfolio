@@ -76,9 +76,9 @@ const projects: Project[] = [
 
 export default function ProjectsSection() {
   return (
-    <section className="py-12 bg-[#090E19]">
+    <section className="py-12 bg-gray-100 dark:bg-[#090E19]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold mb-12 text-center text-white">
+        <h2 className="text-3xl font-bold mb-12 text-center text-black dark:text-white">
           My Projects
         </h2>
 
@@ -89,7 +89,7 @@ export default function ProjectsSection() {
               whileHover={{ scale: 1.05 }}
               className="group"
             >
-              <Card className="overflow-hidden shadow-[0_0_15px_#00FF00] hover:shadow-[0_0_25px_#00FF7F] transition-shadow duration-500 bg-[#0B1224] transform hover:-translate-y-1 hover:scale-105">
+              <Card className="overflow-hidden shadow-[0_0_15px_#00FF00] dark:shadow-[0_0_15px_#00FFAA] hover:shadow-[0_0_25px_#00FF7F] transition-shadow duration-500 bg-white dark:bg-[#0B1224] transform hover:-translate-y-1 hover:scale-105">
                 <div className="relative">
                   {project.screenshots && (
                     <div className="overflow-hidden h-48 rounded-md">
@@ -121,19 +121,24 @@ export default function ProjectsSection() {
                 </div>
 
                 <CardContent>
-                  <h3 className="text-lg font-semibold mb-2 text-white">
+                  <h3 className="text-lg font-semibold mb-2 text-black dark:text-white">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-gray-300 mb-4">
+                  <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
                     {project.description}
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags?.map((tag) => (
-                      <Badge key={tag}>{tag}</Badge>
+                      <Badge
+                        key={tag}
+                        className="dark:bg-gray-800 dark:text-gray-200"
+                      >
+                        {tag}
+                      </Badge>
                     ))}
                   </div>
                   <a href={project.url} target="_blank" rel="noreferrer">
-                    <Button className="w-full py-3 text-base font-medium animate-breathe hover:bg-[#00FF7F] hover:text-black transition-colors duration-300">
+                    <Button className="w-full py-3 text-base font-medium animate-breathe hover:bg-[#00FF7F] hover:text-black dark:hover:bg-[#00FFAA] transition-colors duration-300">
                       Open Live Demo
                     </Button>
                   </a>

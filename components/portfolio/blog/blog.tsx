@@ -43,7 +43,7 @@ const blogs = [
   {
     id: 5,
     title: "From BBM Student to Full-Time IT Learner",
-    desc: "I joined BBM 1st semester in lumbini banijya campus, but destiny pulled me towards IT. Leaving BBM was difficult, but choosing IT gave me purpose and direction.",
+    desc: "I joined BBM 1st semester in Lumbini Banijya Campus, but destiny pulled me towards IT. Leaving BBM was difficult, but choosing IT gave me purpose and direction.",
     image: "/blog/lumbinibanijya.webp",
     tag: "Career Switch",
   },
@@ -79,7 +79,7 @@ const blogs = [
 
 export default function BlogSection() {
   return (
-    <section className="w-full bg-[#050A17] text-white py-20 px-6 md:px-12">
+    <section className="w-full bg-white dark:bg-[#050A17] text-gray-900 dark:text-white py-20 px-6 md:px-12 transition-colors duration-500">
       {/* HEADER */}
       <motion.div
         className="max-w-4xl mx-auto text-center mb-16"
@@ -91,7 +91,7 @@ export default function BlogSection() {
         <h2 className="text-3xl md:text-5xl font-bold mb-4">
           My Blogs & Experiences
         </h2>
-        <p className="text-sm md:text-lg text-gray-300 leading-relaxed">
+        <p className="text-sm md:text-lg leading-relaxed text-gray-700 dark:text-gray-300">
           A collection of my journey — from education, internships, training,
           hobbies, adventures, and passion. Every moment shaped who I am today
           as a tech-driven, creative, and continuously evolving person.
@@ -108,8 +108,8 @@ export default function BlogSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <Card className="bg-[#0A1323] text-white border border-[#1A2335] rounded-xl overflow-hidden shadow-lg hover:shadow-[0_0_20px_rgba(0,200,255,0.3)] transition-all duration-300">
-              {/* HOVER SLIDE IMAGE ANIMATION */}
+            <Card className="border rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,200,255,0.3)] bg-gray-100 dark:bg-[#0A1323] border-gray-200 dark:border-[#1A2335]">
+              {/* IMAGE */}
               <motion.div
                 className="relative w-full h-56 overflow-hidden"
                 whileHover={{ scale: 1.05 }}
@@ -120,29 +120,28 @@ export default function BlogSection() {
                   alt={blog.title}
                   fill
                   className="object-cover"
+                  priority
                 />
               </motion.div>
 
               {/* CARD BODY */}
-              <CardHeader>
-                <span className="text-xs text-cyan-300 font-semibold tracking-wider uppercase">
+              <CardHeader className="px-4 pt-4">
+                <span className="text-xs font-semibold tracking-wider uppercase text-blue-500 dark:text-cyan-300">
                   {blog.tag}
                 </span>
-
                 <CardTitle className="text-xl md:text-2xl font-bold mt-2">
                   {blog.title}
                 </CardTitle>
-
-                <CardDescription className="text-gray-300 mt-3 text-sm md:text-base leading-relaxed">
+                <CardDescription className="mt-3 text-sm md:text-base leading-relaxed text-gray-700 dark:text-gray-300">
                   {blog.desc}
                 </CardDescription>
               </CardHeader>
 
-              <CardContent>
+              <CardContent className="px-4 pb-4">
                 <motion.button
                   whileHover={{ x: 6 }}
                   transition={{ duration: 0.3 }}
-                  className="mt-4 text-cyan-400 text-sm font-semibold hover:underline"
+                  className="mt-4 text-sm font-semibold hover:underline text-blue-600 dark:text-cyan-400"
                 >
                   Read More →
                 </motion.button>

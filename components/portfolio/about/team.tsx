@@ -112,11 +112,13 @@ export default function TeamSection() {
   }, []);
 
   return (
-    <section className="w-full bg-[#050A17] text-white py-20 px-6 md:px-12">
+    <section className="w-full bg-white text-black dark:bg-[#050A17] dark:text-white py-20 px-6 md:px-12 transition-colors duration-500">
       {/* Section Title */}
       <div className="max-w-5xl mx-auto text-center mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold">Meet Our Team</h2>
-        <p className="text-sm sm:text-base md:text-lg mt-4">
+        <h2 className="text-3xl md:text-4xl font-bold text-black dark:text-white">
+          Meet Our Team
+        </h2>
+        <p className="text-sm sm:text-base md:text-lg mt-4 text-gray-700 dark:text-gray-300">
           A multidisciplinary team building robust products — design-led,
           data-driven, and user-first.
         </p>
@@ -130,21 +132,21 @@ export default function TeamSection() {
             whileHover={{ y: -10, scale: 1.03 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
-            <Card className="bg-[#0A1323] border-none shadow-lg relative overflow-hidden">
+            <Card className="bg-gray-100 dark:bg-[#0A1323] border-none shadow-lg relative overflow-hidden transition-colors duration-500">
               {/* Expertise Badge */}
-              <div className="absolute top-3 right-3 bg-blue-600 text-white text-xs px-2 py-1 rounded-full font-semibold z-10">
+              <div className="absolute top-3 right-3 bg-blue-600 dark:bg-green-500 text-white text-xs px-2 py-1 rounded-full font-semibold z-10">
                 {member.expertise}
               </div>
               <CardHeader className="text-center mt-4">
-                <CardTitle className="text-lg md:text-xl font-semibold">
+                <CardTitle className="text-lg md:text-xl font-semibold text-black dark:text-white">
                   {member.name}
                 </CardTitle>
-                <CardDescription className="text-sm md:text-base">
+                <CardDescription className="text-sm md:text-base text-gray-700 dark:text-gray-300">
                   {member.role}
                 </CardDescription>
               </CardHeader>
               <CardContent>
-                <p className="text-sm md:text-base leading-relaxed">
+                <p className="text-sm md:text-base leading-relaxed text-black dark:text-gray-200">
                   {member.description}
                 </p>
               </CardContent>
@@ -155,7 +157,7 @@ export default function TeamSection() {
 
       {/* Testimonials Slider */}
       <div className="max-w-4xl mx-auto">
-        <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center">
+        <h3 className="text-2xl md:text-3xl font-bold mb-6 text-center text-black dark:text-white">
           Testimonials
         </h3>
         <div className="relative h-40">
@@ -168,15 +170,15 @@ export default function TeamSection() {
               transition={{ duration: 0.6 }}
               className="absolute w-full"
             >
-              <Card className="bg-[#0A1323] border-none shadow-lg p-6 text-center">
+              <Card className="bg-gray-100 dark:bg-[#0A1323] border-none shadow-lg p-6 text-center transition-colors duration-500">
                 <CardContent>
-                  <p className="text-sm md:text-base italic mb-4">
+                  <p className="text-sm md:text-base italic mb-4 text-black dark:text-gray-200">
                     &quot;{testimonials[testimonialIndex].text}&quot;
                   </p>
-                  <p className="font-semibold">
+                  <p className="font-semibold text-black dark:text-white">
                     {testimonials[testimonialIndex].name}
                   </p>
-                  <p className="text-sm text-gray-400">
+                  <p className="text-sm text-gray-600 dark:text-gray-400">
                     {testimonials[testimonialIndex].role}
                   </p>
                 </CardContent>

@@ -29,7 +29,6 @@ const skills: Skill[] = [
     category: "Frontend",
     img: "/logo/javascript.png",
   },
-
   { id: "node", name: "Node.js", category: "Backend", img: "/logo/nodejs.png" },
   {
     id: "express",
@@ -38,7 +37,6 @@ const skills: Skill[] = [
     img: "/logo/express.png",
   },
   { id: "nest", name: "Nest.js", category: "Backend", img: "/logo/nestjs.jpg" },
-
   { id: "mysql", name: "MySQL", category: "Database", img: "/logo/mysql.png" },
   {
     id: "mongo",
@@ -65,10 +63,11 @@ export default function SkillsGrid() {
     <section className="py-12 max-w-7xl mx-auto px-6">
       <div className="flex items-center justify-between mb-8">
         <div>
-          <h3 className="text-4xl font-extrabold text-emerald-400">
-            <span className="text-white">Skills</span>
+          <h3 className="text-4xl font-extrabold">
+            <span className="text-black dark:text-white">Skills</span>{" "}
+            <span className="text-emerald-400">·</span>
           </h3>
-          <p className="text-sm text-muted-foreground mt-1">
+          <p className="text-sm text-gray-600 dark:text-gray-300 mt-1">
             Frontend · Backend · Databases
           </p>
         </div>
@@ -82,9 +81,9 @@ export default function SkillsGrid() {
             className="rounded-lg"
             animate={breathing.animate}
           >
-            <Card className="bg-[#0b1220] border border-transparent hover:border-emerald-600/40 shadow-lg hover:shadow-emerald-500/20 transition-all duration-300">
+            <Card className="bg-gray-100 dark:bg-[#0b1220] border border-transparent hover:border-emerald-600/40 shadow-lg hover:shadow-emerald-500/20 transition-all duration-300">
               <CardContent className="flex flex-col items-center gap-3 p-6">
-                <div className="w-16 h-16 rounded-md flex items-center justify-center bg-linear-to-br from-zinc-900 to-zinc-800/60 ring-1 ring-inset ring-white/5">
+                <div className="w-16 h-16 rounded-md flex items-center justify-center bg-gradient-to-br from-zinc-200/20 dark:from-zinc-900 to-zinc-300/10 dark:to-zinc-800/60 ring-1 ring-inset ring-black/5 dark:ring-white/5">
                   <Image
                     src={skill.img}
                     width={40}
@@ -95,10 +94,10 @@ export default function SkillsGrid() {
                 </div>
 
                 <div className="text-center">
-                  <div className="text-sm font-semibold text-white">
+                  <div className="text-sm font-semibold text-black dark:text-white">
                     {skill.name}
                   </div>
-                  <div className="text-xs text-muted-foreground mt-1">
+                  <div className="text-xs text-gray-600 dark:text-gray-400 mt-1">
                     {skill.category}
                   </div>
                 </div>

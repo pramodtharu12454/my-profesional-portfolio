@@ -31,7 +31,7 @@ export default function AboutSection() {
   const remainingText = " skills.";
 
   return (
-    <section className="w-full bg-[#050A17] text-white py-20 px-6 md:px-12">
+    <section className="w-full bg-white text-black dark:bg-[#050A17] dark:text-white py-20 px-6 md:px-12 transition-colors duration-500">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 md:gap-16">
         {/* LEFT SIDE — TEXT */}
         <motion.div
@@ -41,14 +41,14 @@ export default function AboutSection() {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <Card className="bg-[#0A1323] border-none shadow-xl p-4 md:p-6 rounded-2xl">
+          <Card className="bg-gray-100 dark:bg-[#0A1323] border-none shadow-xl dark:shadow-2xl p-4 md:p-6 rounded-2xl transition-colors duration-500">
             <CardHeader className="space-y-3">
-              <CardTitle className="text-2xl sm:text-3xl md:text-4xl font-bold">
+              <CardTitle className="text-2xl sm:text-3xl md:text-4xl font-bold text-black dark:text-white">
                 About Me
               </CardTitle>
 
               <CardDescription>
-                <p className="text-sm sm:text-base md:text-lg leading-relaxed text-white">
+                <p className="text-sm sm:text-base md:text-lg leading-relaxed text-gray-800 dark:text-gray-200">
                   {displayText}
                   {index === fullText.length && remainingText}
                 </p>
@@ -67,7 +67,7 @@ export default function AboutSection() {
           transition={{ duration: 0.8 }}
           whileHover={{ scale: 1.05 }}
         >
-          <div className="relative w-full h-72 sm:h-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl">
+          <div className="relative w-full h-72 sm:h-80 md:h-96 rounded-2xl overflow-hidden shadow-2xl dark:shadow-2xl transition-shadow duration-500">
             <Image
               src="/about.jpg"
               alt="Full Stack Developer"

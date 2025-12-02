@@ -8,6 +8,7 @@ import {
   Linkedin,
   Youtube,
   MessageCircle,
+  Mail,
 } from "lucide-react";
 
 export default function Footer() {
@@ -73,7 +74,12 @@ export default function Footer() {
             >
               <Youtube />
             </a>
-
+          <a
+            href="mailto:tharupramod406@gmail.com"
+            className="hover:text-red-600 dark:hover:text-red-400 transition"
+          >
+            <Mail className="w-6 h-6" />
+          </a>
             <a
               href="https://www.linkedin.com/in/pramod-tharu-6877a4273/"
               target="_blank"
@@ -173,7 +179,12 @@ export default function Footer() {
           >
             <Youtube />
           </a>
-
+          <a
+            href="mailto:tharupramod406@gmail.com"
+            className="hover:text-red-600 dark:hover:text-red-400 transition"
+          >
+            <Mail className="w-6 h-6" />
+          </a>
           <a
             href="https://www.linkedin.com/in/pramod-tharu-6877a4273/"
             target="_blank"

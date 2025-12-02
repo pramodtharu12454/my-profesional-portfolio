@@ -1,7 +1,14 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Facebook, Instagram, Github } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Github,
+  Linkedin,
+  Youtube,
+  MessageCircle,
+} from "lucide-react";
 
 export default function Footer() {
   return (
@@ -28,15 +35,51 @@ export default function Footer() {
             className="object-contain"
           />
 
-          <div className="flex gap-4">
-            <a href="#" className="hover:text-blue-500">
-              <Facebook size={24} />
+             <div className="flex gap-4 justify-start md:justify-start mt-6 text-2xl">
+            <a
+              href="https://www.facebook.com/parmod.tharu.507"
+              target="_blank"
+              className="hover:text-blue-600 dark:hover:text-green-400 transition"
+            >
+              <Facebook />
             </a>
-            <a href="#" className="hover:text-pink-500">
-              <Instagram size={24} />
+
+            <a
+              href="https://www.instagram.com/pra.mod._.tharu/"
+              target="_blank"
+              className="hover:text-pink-600 dark:hover:text-pink-400 transition"
+            >
+              <Instagram />
             </a>
-            <a href="#" className="hover:text-gray-400 dark:hover:text-white">
-              <Github size={24} />
+            <a
+              href="https://wa.me/9815442325"
+              target="_blank"
+              className="hover:text-green-600 dark:hover:text-green-400 transition"
+            >
+              <MessageCircle />
+            </a>
+            <a
+              href="https://github.com/pramodtharu12454"
+              target="_blank"
+              className="hover:text-black dark:hover:text-white transition"
+            >
+              <Github />
+            </a>
+
+            <a
+              href="https://www.youtube.com/@mr.tharu9"
+              target="_blank"
+              className="hover:text-red-600 dark:hover:text-red-400 transition"
+            >
+              <Youtube />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/pramod-tharu-6877a4273/"
+              target="_blank"
+              className="hover:text-blue-700 dark:hover:text-blue-400 transition"
+            >
+              <Linkedin />
             </a>
           </div>
         </div>
@@ -92,17 +135,53 @@ export default function Footer() {
         {/* Chat With Us */}
         <div>
           <h3 className="font-semibold text-lg mb-1">Chat With Us</h3>
-          <div className="flex gap-4 mt-1">
-            <a href="#" className="hover:text-green-500">
-              WhatsApp
-            </a>
-            <a href="#" className="hover:text-pink-500">
-              Instagram
-            </a>
-            <a href="#" className="hover:text-purple-400">
-              Viber
-            </a>
-          </div>
+           <div className="flex gap-4 justify-center md:justify-start mt-6 text-2xl">
+          <a
+            href="https://www.facebook.com/parmod.tharu.507"
+            target="_blank"
+            className="hover:text-blue-600 dark:hover:text-green-400 transition"
+          >
+            <Facebook />
+          </a>
+
+          <a
+            href="https://www.instagram.com/pra.mod._.tharu/"
+            target="_blank"
+            className="hover:text-pink-600 dark:hover:text-pink-400 transition"
+          >
+            <Instagram />
+          </a>
+          <a
+            href="https://wa.me/9815442325"
+            target="_blank"
+            className="hover:text-green-600 dark:hover:text-green-400 transition"
+          >
+            <MessageCircle />
+          </a>
+          <a
+            href="https://github.com/pramodtharu12454"
+            target="_blank"
+            className="hover:text-black dark:hover:text-white transition"
+          >
+            <Github />
+          </a>
+
+          <a
+            href="https://www.youtube.com/@mr.tharu9"
+            target="_blank"
+            className="hover:text-red-600 dark:hover:text-red-400 transition"
+          >
+            <Youtube />
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/pramod-tharu-6877a4273/"
+            target="_blank"
+            className="hover:text-blue-700 dark:hover:text-blue-400 transition"
+          >
+            <Linkedin />
+          </a>
+        </div>
         </div>
       </div>
 

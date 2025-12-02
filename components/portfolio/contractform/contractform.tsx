@@ -5,6 +5,14 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import {
+  Facebook,
+  Instagram,
+  Github,
+  Linkedin,
+  Youtube,
+  MessageCircle,
+} from "lucide-react";
 
 // LEFT: INQUIRY FORM
 function InquiryForm() {
@@ -117,20 +125,53 @@ function ContactInfo() {
         <CardHeader>
           <CardTitle className="text-xl font-bold">Chat With Us</CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-wrap gap-3">
-          <button className="px-4 py-2 bg-green-600 rounded-xl text-white">
-            WhatsApp
-          </button>
-          <button className="px-4 py-2 bg-pink-600 rounded-xl text-white">
-            Instagram
-          </button>
-          <button className="px-4 py-2 bg-purple-600 rounded-xl text-white">
-            Viber
-          </button>
-          <button className="px-4 py-2 bg-blue-600 rounded-xl text-white">
-            WeChat
-          </button>
-        </CardContent>
+           <div className="flex gap-4 justify-start md:justify-start mt-6 text-2xl">
+            <a
+              href="https://www.facebook.com/parmod.tharu.507"
+              target="_blank"
+              className="hover:text-blue-600 dark:hover:text-green-400 transition"
+            >
+              <Facebook />
+            </a>
+
+            <a
+              href="https://www.instagram.com/pra.mod._.tharu/"
+              target="_blank"
+              className="hover:text-pink-600 dark:hover:text-pink-400 transition"
+            >
+              <Instagram />
+            </a>
+            <a
+              href="https://wa.me/9815442325"
+              target="_blank"
+              className="hover:text-green-600 dark:hover:text-green-400 transition"
+            >
+              <MessageCircle />
+            </a>
+            <a
+              href="https://github.com/pramodtharu12454"
+              target="_blank"
+              className="hover:text-black dark:hover:text-white transition"
+            >
+              <Github />
+            </a>
+
+            <a
+              href="https://www.youtube.com/@mr.tharu9"
+              target="_blank"
+              className="hover:text-red-600 dark:hover:text-red-400 transition"
+            >
+              <Youtube />
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/pramod-tharu-6877a4273/"
+              target="_blank"
+              className="hover:text-blue-700 dark:hover:text-blue-400 transition"
+            >
+              <Linkedin />
+            </a>
+          </div>
       </Card>
     </div>
   );

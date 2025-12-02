@@ -7,6 +7,7 @@ import DeveloperProfile from "@/components/portfolio/dashboard/dasboard1";
 import DashboardHero from "@/components/portfolio/dashboard/dashboard";
 import Footer from "@/components/portfolio/navbar/footer";
 import ProjectsSection from "@/components/portfolio/project/project.";
+import AchievementsPage from "@/components/portfolio/sidebarlayout";
 import SkillsGrid from "@/components/portfolio/skill/skill";
 import React from "react";
 
@@ -19,6 +20,7 @@ const page = () => {
       <FAQ />
       <TeamSection />
       <SkillsGrid />
+      <AchievementsPage />
       <ProjectsSection />
       <BlogSection />
       <LetsConnect />

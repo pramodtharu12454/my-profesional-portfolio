@@ -1,8 +1,10 @@
 "use client";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function DashboardHero() {
+  const router = useRouter();
   const roles = ["Full Stack Developer", "Creative Thinker", "Web Developer"];
   const [index, setIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
@@ -59,11 +61,17 @@ export default function DashboardHero() {
 
         {/* BUTTONS */}
         <div className="flex gap-4 justify-center md:justify-start pt-4">
-          <button className="px-5 py-2 rounded-md border border-green-500 text-green-400 hover:bg-green-500 hover:text-black shadow-lg shadow-green-500/40">
+          <button
+            onClick={() => router.push("/projects")}
+            className="px-5 py-2 rounded-md border border-green-500 text-green-400 hover:bg-green-500 hover:text-black shadow-lg shadow-green-500/40"
+          >
             View Work
           </button>
 
-          <button className="px-5 py-2 rounded-md border border-gray-400 text-white hover:bg-gray-300 hover:text-black shadow-lg shadow-white/10">
+          <button
+            onClick={() => router.push("/contact")}
+            className="px-5 py-2 rounded-md border border-gray-400 text-white hover:bg-gray-300 hover:text-black shadow-lg shadow-white/10"
+          >
             Contact Me
           </button>
         </div>

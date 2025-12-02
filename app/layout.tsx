@@ -13,9 +13,75 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// =====================
+// 🔥 FULL SEO METADATA
+// =====================
 export const metadata: Metadata = {
-  title: "Pramod tharu",
-  description: "As a full stack devloper",
+  title: {
+    default: "Pramod Tharu | Full Stack Developer",
+    template: "%s | Pramod Tharu",
+  },
+  description:
+    "I am a Full Stack Developer experienced in Next.js, Node.js, MongoDB, and modern web technologies. I build fast, responsive, and scalable web applications.",
+  keywords: [
+    "Pramod Tharu",
+    "Full Stack Developer",
+    "Next.js Developer",
+    "MERN Stack Developer",
+    "Frontend Developer",
+    "Backend Developer",
+    "Portfolio",
+    "Web Developer Nepal",
+  ],
+  authors: [{ name: "Pramod Tharu" }],
+  creator: "Pramod Tharu",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
+  },
+
+  // ---------- 🔵 Open Graph (Facebook, LinkedIn) ----------
+  openGraph: {
+    title: "Pramod Tharu | Full Stack Developer",
+    description:
+      "Explore my portfolio showcasing full-stack development projects built with Next.js, Node.js, and MongoDB.",
+    type: "website",
+    url: "https://www.pramodtharu.com.np/",
+    siteName: "Pramod Portfolio",
+    images: [
+      {
+        url: "/logo.jpg", // place image inside public/
+        width: 1200,
+        height: 630,
+        alt: "Pramod Tharu Portfolio",
+      },
+    ],
+  },
+
+  // ---------- 🔵 Twitter Card SEO ----------
+  twitter: {
+    card: "summary_large_image",
+    title: "Pramod Tharu | Full Stack Developer",
+    description:
+      "I build high-performance full-stack applications using Next.js, Node.js, and MongoDB.",
+    images: ["/logo.jpg"],
+    creator: "@your-twitter",
+  },
+
+  // ---------- 🔵 Icons / Favicon ----------
+  icons: {
+    icon: "/favicon.ico",
+    shortcut: "/favicon.ico",
+    apple: "/logo.jpg",
+  },
+
+  // ---------- 🔵 App Manifest (PWA optional) ----------
+  manifest: "/manifest.json",
 };
 
 export default function RootLayout({
@@ -28,7 +94,6 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {/* ⬇⬇⬇ FIX: SidebarLayout wraps the whole app */}
         <SidebarLayout>{children}</SidebarLayout>
       </body>
     </html>

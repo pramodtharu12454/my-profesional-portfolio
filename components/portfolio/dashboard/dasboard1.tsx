@@ -59,7 +59,7 @@ export default function DeveloperProfile() {
 
                 {/* ⭐ DOWNLOAD RESUME BUTTON ADDED HERE */}
                 <motion.a
-                  href="/resume.pdf"
+                  href="/pramod.pdf"
                   download
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}

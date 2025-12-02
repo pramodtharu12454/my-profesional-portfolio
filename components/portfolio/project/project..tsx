@@ -21,7 +21,7 @@ const projects: Project[] = [
     title: "Cosmic Media",
     description: "Tour & media demo for cosmicmedia.com.np",
     url: "https://www.cosmicmedia.com.np",
-    screenshots: ["/images/cosmicmedia-1.jpg", "/images/cosmicmedia-2.jpg"],
+    screenshots: ["/project/cosmicmedia.jpg"],
     tags: ["React", "Shadcn", "Demo"],
   },
   {
@@ -29,7 +29,7 @@ const projects: Project[] = [
     title: "Mount Glacier Trek",
     description: "Tour & travel demo for mountglaciertrek.com.np",
     url: "https://www.mountglaciertrek.com.np",
-    screenshots: ["/images/mountglacier-1.jpg"],
+    screenshots: ["/project/mountglacier.jpg"],
     tags: ["Next.js", "Tours"],
   },
   {
@@ -37,7 +37,7 @@ const projects: Project[] = [
     title: "LifeTech",
     description: "Corporate demo for lifetech.com.np",
     url: "https://www.lifetech.com.np",
-    screenshots: ["/images/lifetech-1.jpg"],
+    screenshots: ["/project/lifetech.jpg"],
     tags: ["Corporate", "Demo"],
   },
   {
@@ -45,7 +45,7 @@ const projects: Project[] = [
     title: "CV Ghar",
     description: "CV service demo cvghar.pramodtharu.com.np",
     url: "https://cvghar.pramodtharu.com.np",
-    screenshots: ["/images/cvghar-1.jpg"],
+    screenshots: ["/project/cvghar.jpg"],
     tags: ["Portfolio"],
   },
   {
@@ -53,7 +53,7 @@ const projects: Project[] = [
     title: "Pramod Portfolio",
     description: "Personal portfolio pramodtharu.vercel.app",
     url: "https://pramodtharu.vercel.app",
-    screenshots: ["/images/portfolio-1.jpg"],
+    screenshots: ["/project/pramod.jpg"],
     tags: ["Portfolio", "Personal"],
   },
   {
@@ -61,7 +61,15 @@ const projects: Project[] = [
     title: "CareerKhoj (helped)",
     description: "Helped develop careerkhoj project",
     url: "https://careerkhoj.balgobindchaudhary.com.np",
-    screenshots: ["/images/careerkhoj-1.jpg"],
+    screenshots: ["/project/carrerkhoj.jpg"],
+    tags: ["Client Work"],
+  },
+  {
+    id: "bmandu",
+    title: "Bmandu Clothing Brand",
+    description: "Helped develop clothing brand project",
+    url: "https://bmandu.balgobindchaudhary.com.np/",
+    screenshots: ["/project/bmandu.jpg"],
     tags: ["Client Work"],
   },
   {
@@ -69,7 +77,7 @@ const projects: Project[] = [
     title: "Sajilo Digital",
     description: "Company demo sajilodigital.com",
     url: "https://www.sajilodigital.com.np",
-    screenshots: ["/images/sajilodigital-1.jpg"],
+    screenshots: ["/project/sajilodigital.jpg"],
     tags: ["Agency"],
   },
 ];
@@ -90,20 +98,30 @@ export default function ProjectsSection() {
               className="group"
             >
               <Card className="overflow-hidden shadow-[0_0_15px_#00FF00] dark:shadow-[0_0_15px_#00FFAA] hover:shadow-[0_0_25px_#00FF7F] transition-shadow duration-500 bg-white dark:bg-[#0B1224] transform hover:-translate-y-1 hover:scale-105">
+                {/* HEADER ON IMAGE */}
                 <div className="relative">
+                  <div className="absolute top-0 left-0 w-full bg-black/60 text-white py-2 text-center text-sm font-semibold z-20 opacity-0 group-hover:opacity-100 transition-all duration-500 sm:opacity-0 sm:group-hover:opacity-100">
+                    {project.title}
+                  </div>
+
+                  {/* IMAGE CONTAINER */}
                   {project.screenshots && (
-                    <div className="overflow-hidden h-48 rounded-md">
+                    <div className="overflow-hidden h-48 rounded-md relative">
                       <motion.div
                         className="flex flex-col"
                         whileHover={{
                           y:
                             project.screenshots.length > 1
-                              ? -project.screenshots.length * 48
+                              ? -(project.screenshots.length * 48)
                               : 0,
                         }}
                         transition={{
                           duration: 3,
-                          repeat: Infinity,
+                          repeat:
+                            typeof window !== "undefined" &&
+                            window.innerWidth < 768
+                              ? Infinity
+                              : 0,
                           repeatType: "reverse",
                         }}
                       >
@@ -127,6 +145,7 @@ export default function ProjectsSection() {
                   <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
                     {project.description}
                   </p>
+
                   <div className="flex flex-wrap gap-2 mb-4">
                     {project.tags?.map((tag) => (
                       <Badge
@@ -137,6 +156,7 @@ export default function ProjectsSection() {
                       </Badge>
                     ))}
                   </div>
+
                   <a href={project.url} target="_blank" rel="noreferrer">
                     <Button className="w-full py-3 text-base font-medium animate-breathe hover:bg-[#00FF7F] hover:text-black dark:hover:bg-[#00FFAA] transition-colors duration-300">
                       Open Live Demo

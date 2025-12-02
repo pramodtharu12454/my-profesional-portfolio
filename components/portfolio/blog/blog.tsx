@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import {
@@ -10,6 +10,7 @@ import {
   CardDescription,
   CardContent,
 } from "@/components/ui/card";
+import { X } from "lucide-react";
 
 const blogs = [
   {
@@ -78,6 +79,8 @@ const blogs = [
 ];
 
 export default function BlogSection() {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <section className="w-full bg-white dark:bg-[#050A17] text-gray-900 dark:text-white py-20 px-6 md:px-12 transition-colors duration-500">
       {/* HEADER */}
@@ -111,9 +114,10 @@ export default function BlogSection() {
             <Card className="border rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:shadow-[0_0_20px_rgba(0,200,255,0.3)] bg-gray-100 dark:bg-[#0A1323] border-gray-200 dark:border-[#1A2335]">
               {/* IMAGE */}
               <motion.div
-                className="relative w-full h-56 overflow-hidden"
+                className="relative w-full h-56 overflow-hidden cursor-pointer"
                 whileHover={{ scale: 1.05 }}
                 transition={{ duration: 0.5 }}
+                onClick={() => setSelectedImage(blog.image)}
               >
                 <Image
                   src={blog.image}
@@ -150,6 +154,26 @@ export default function BlogSection() {
           </motion.div>
         ))}
       </div>
+
+      {/* MODAL */}
+      {selectedImage && (
+        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50">
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-6 right-6 text-white text-3xl p-2 rounded-full hover:bg-white/20 transition"
+          >
+            <X />
+          </button>
+          <div className="relative w-full max-w-4xl h-[80vh]">
+            <Image
+              src={selectedImage}
+              alt="Full Image"
+              fill
+              className="object-contain"
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 }

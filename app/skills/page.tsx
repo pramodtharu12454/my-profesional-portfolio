@@ -1,3 +1,4 @@
+import Footer from "@/components/portfolio/navbar/footer";
 import AchievementsPage from "@/components/portfolio/sidebarlayout";
 import ExtraSkills from "@/components/portfolio/skill/extraskill";
 import SkillsGrid from "@/components/portfolio/skill/skill";
@@ -9,6 +10,7 @@ const skillpage = () => {
       <SkillsGrid />
       <AchievementsPage />
       <ExtraSkills />
+       <Footer />
     </div>
   );
 };

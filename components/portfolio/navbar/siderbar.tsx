@@ -68,16 +68,14 @@ export default function SidebarLayout({ children }: SidebarLayoutProps) {
     return () => clearTimeout(timer);
   }, []);
 
-  // Apply theme to html root
+  // Apply theme
   useEffect(() => {
     const root = window.document.documentElement;
     if (theme === "dark") root.classList.add("dark");
     else root.classList.remove("dark");
   }, [theme]);
 
-  const toggleTheme = () => {
-    setTheme(theme === "dark" ? "light" : "dark");
-  };
+  const toggleTheme = () => setTheme(theme === "dark" ? "light" : "dark");
 
   const menu = [
     { name: "Home", Icon: Home, href: "/" },
@@ -94,9 +92,9 @@ export default function SidebarLayout({ children }: SidebarLayoutProps) {
       {!loading && (
         <div className="flex w-full min-h-screen transition-all">
           {/* Desktop Sidebar */}
-          <aside className="hidden md:flex flex-col w-48 h-screen p-4 shadow-xl border-r border-gray-700 fixed top-0 left-0 z-30 bg-gray-100 dark:bg-[#0B1224] text-black dark:text-white transition-colors">
+          <aside className="hidden md:flex flex-col w-48 h-screen p-4 shadow-xl border-r border-border fixed top-0 left-0 z-30 bg-sidebar text-sidebar-foreground transition-colors">
             {/* Theme Switch */}
-            <div className="absolute top-4 right-4 flex items-center gap-2">
+            <div className="absolute top-3 right-3 flex items-center gap-2">
               <Sun size={16} />
               <label className="relative inline-flex items-center cursor-pointer">
                 <input
@@ -105,20 +103,20 @@ export default function SidebarLayout({ children }: SidebarLayoutProps) {
                   checked={theme === "dark"}
                   onChange={toggleTheme}
                 />
-                <div className="w-14 h-7 bg-gray-300 dark:bg-gray-600 rounded-full peer transition-all" />
+                <div className="w-12 h-6 bg-gray-300 dark:bg-gray-600 rounded-full peer transition-all" />
                 <motion.div
                   layout
-                  className={`absolute top-0.5 left-0.5 w-6 h-6 rounded-full flex items-center justify-center shadow-md transition-all ${
+                  className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full flex items-center justify-center shadow-md transition-all ${
                     theme === "dark"
                       ? "bg-black text-green-400 shadow-[0_0_8px_2px_rgba(0,255,144,0.5)]"
                       : "bg-yellow-400 text-yellow-500 shadow-[0_0_8px_2px_rgba(255,223,0,0.5)]"
                   }`}
                   style={{
                     transform:
-                      theme === "dark" ? "translateX(28px)" : "translateX(0px)",
+                      theme === "dark" ? "translateX(24px)" : "translateX(0px)",
                   }}
                 >
-                  {theme === "dark" ? <Moon size={16} /> : <Sun size={16} />}
+                  {theme === "dark" ? <Moon size={14} /> : <Sun size={14} />}
                 </motion.div>
               </label>
               <Moon size={16} />
@@ -143,25 +141,24 @@ export default function SidebarLayout({ children }: SidebarLayoutProps) {
             </motion.div>
 
             {/* Menu */}
-            <nav className="flex flex-col gap-3 mt-6">
+            <nav className="flex flex-col gap-3">
               {menu.map(({ name, Icon, href }) => (
                 <motion.a
                   key={name}
                   href={href}
                   whileHover={{ x: 6, color: "#00FF91" }}
                   transition={{ duration: 0.2 }}
-                  className="flex items-center gap-3 px-2 py-2 text-md font-medium rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+                  className="flex items-center gap-3 px-2 py-1 text-md font-medium rounded-md hover:bg-white/10"
                 >
                   <Icon size={22} />
                   {name}
                 </motion.a>
               ))}
-
               <motion.a
                 href="/contact"
                 whileHover={{ x: 6, color: "#00FF91" }}
                 transition={{ duration: 0.2 }}
-                className="flex items-center gap-3 px-2 py-2 text-md font-medium mt-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors"
+                className="flex items-center gap-3 px-2 py-1 text-md font-medium mt-2 rounded-md hover:bg-white/10"
               >
                 <Phone size={22} /> Contact
               </motion.a>
@@ -169,12 +166,12 @@ export default function SidebarLayout({ children }: SidebarLayoutProps) {
           </aside>
 
           {/* Main Content */}
-          <main className="flex flex-col flex-1 md:ml-48 bg-gray-50 dark:bg-[#050A17] text-gray-900 dark:text-white transition-colors p-6 md:p-8 min-h-screen">
+          <main className="flex flex-col flex-1 md:ml-48 bg-background text-foreground transition-colors p-6 md:p-8 min-h-screen">
             {children}
           </main>
 
           {/* Mobile Top Bar */}
-          <div className="md:hidden fixed top-0 left-0 w-full flex items-center justify-between px-4 py-3 z-40 border-b border-gray-700 dark:border-gray-600 bg-gray-100 dark:bg-[#0B1224] text-black dark:text-white transition-colors">
+          <div className="md:hidden fixed top-0 left-0 w-full flex items-center justify-between px-4 py-3 z-40 border-b border-border bg-sidebar text-sidebar-foreground transition-colors">
             <div className="w-12 h-12 rounded-full overflow-hidden shadow-[0_0_15px_3px_rgba(0,255,0,0.4)]">
               <Image
                 src="/logo.jpg"
@@ -195,23 +192,68 @@ export default function SidebarLayout({ children }: SidebarLayoutProps) {
                   checked={theme === "dark"}
                   onChange={toggleTheme}
                 />
-                <div className="w-14 h-7 bg-gray-300 dark:bg-gray-600 rounded-full peer transition-all" />
+                <div className="w-12 h-6 bg-gray-300 dark:bg-gray-600 rounded-full peer transition-all" />
                 <motion.div
                   layout
-                  className={`absolute top-0.5 left-0.5 w-6 h-6 rounded-full flex items-center justify-center shadow-md transition-all ${
+                  className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full flex items-center justify-center shadow-md transition-all ${
                     theme === "dark"
                       ? "bg-black text-green-400 shadow-[0_0_8px_2px_rgba(0,255,144,0.5)]"
                       : "bg-yellow-400 text-yellow-500 shadow-[0_0_8px_2px_rgba(255,223,0,0.5)]"
                   }`}
                   style={{
                     transform:
-                      theme === "dark" ? "translateX(28px)" : "translateX(0px)",
+                      theme === "dark" ? "translateX(24px)" : "translateX(0px)",
                   }}
                 >
-                  {theme === "dark" ? <Moon size={16} /> : <Sun size={16} />}
+                  {theme === "dark" ? <Moon size={14} /> : <Sun size={14} />}
                 </motion.div>
               </label>
               <Moon size={16} />
+            </div>
+          </div>
+
+          {/* Mobile Bottom Nav */}
+          <div className="md:hidden fixed bottom-0 left-0 w-full flex flex-col items-center pb-4 pt-6 z-40">
+            <motion.a
+              href="/contact"
+              animate={{
+                scale: [1, 1.06, 1],
+                rotateX: [0, 6, 0],
+                boxShadow: [
+                  "0 6px 18px rgba(0,168,57,0.35)",
+                  "0 12px 26px rgba(0,168,57,0.55)",
+                  "0 6px 18px rgba(0,168,57,0.35)",
+                ],
+              }}
+              transition={{ duration: 2.2, repeat: Infinity }}
+              className="w-20 h-20 rounded-full flex items-center justify-center text-white -top-6 mb-2 relative"
+              style={{ backgroundColor: "#00A839" }}
+            >
+              <Phone size={30} />
+            </motion.a>
+            <div className="flex justify-around w-full px-4 pb-2 text-white text-xs relative">
+              <div
+                className="absolute inset-x-4 bottom-0 h-12 rounded-t-xl"
+                style={{
+                  backgroundColor:
+                    theme === "dark"
+                      ? "rgba(0,27,77,0.9)"
+                      : "rgba(107,182,255,0.9)",
+                  zIndex: 0,
+                }}
+              />
+              {menu.map(({ name, Icon, href }) => (
+                <motion.a
+                  key={name}
+                  href={href}
+                  whileTap={{ scale: 0.9 }}
+                  whileHover={{ color: "#00FF91" }}
+                  className="flex flex-col items-center gap-1 z-10"
+                >
+                  <Icon size={20} />
+                  {name}
+                </motion.a>
+              ))}
             </div>
           </div>
         </div>

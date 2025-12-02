@@ -2,7 +2,6 @@
 
 import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { motion } from "framer-motion";
 
 const certificates = [
   {
@@ -36,32 +35,25 @@ const certificates = [
   },
 ];
 
-const breath = {
-  initial: { scale: 1 },
-  animate: {
-    scale: [1, 1.03, 1],
-    transition: { duration: 3, repeat: Infinity, ease: "easeInOut" },
-  },
-};
-
 export default function AchievementsPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-[#090E19] text-black dark:text-white grid grid-cols-1 lg:grid-cols-3 gap-6 p-6">
       {/* LEFT SIDE — ACHIEVEMENT CARDS */}
       <div className="lg:col-span-2 grid gap-6 sm:grid-cols-2">
         {certificates.map((item, i) => (
-          <motion.div key={i} {...breath}>
-            <Card className="bg-gray-100 dark:bg-[#0F1625] border border-gray-300 dark:border-[#1F2937] shadow-lg hover:shadow-green-400/40 dark:hover:shadow-green-500/40 hover:border-green-300 dark:hover:border-green-400 transition-all duration-300 rounded-xl">
-              <CardHeader>
-                <CardTitle className="text-lg font-semibold text-green-700 dark:text-green-300">
-                  {item.title}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="text-sm text-gray-700 dark:text-gray-300">
-                {item.description}
-              </CardContent>
-            </Card>
-          </motion.div>
+          <Card
+            key={i}
+            className="bg-gray-100 dark:bg-[#0F1625] border border-gray-300 dark:border-[#1F2937] shadow-lg hover:shadow-green-400/40 dark:hover:shadow-green-500/40 hover:border-green-300 dark:hover:border-green-400 transition-all duration-300 rounded-xl"
+          >
+            <CardHeader>
+              <CardTitle className="text-lg font-semibold text-green-700 dark:text-green-300">
+                {item.title}
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="text-sm text-gray-700 dark:text-gray-300">
+              {item.description}
+            </CardContent>
+          </Card>
         ))}
       </div>
 

@@ -8,6 +8,7 @@ import DashboardHero from "@/components/portfolio/dashboard/dashboard";
 import Footer from "@/components/portfolio/navbar/footer";
 import ProjectsSection from "@/components/portfolio/project/project.";
 import AchievementsPage from "@/components/portfolio/sidebarlayout";
+import ExtraSkills from "@/components/portfolio/skill/extraskill";
 import SkillsGrid from "@/components/portfolio/skill/skill";
 import React from "react";
 
@@ -20,6 +21,7 @@ const page = () => {
       <FAQ />
       <TeamSection />
       <SkillsGrid />
+      <ExtraSkills />
       <AchievementsPage />
       <ProjectsSection />
       <BlogSection />

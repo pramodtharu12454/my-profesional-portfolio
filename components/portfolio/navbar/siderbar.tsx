@@ -12,6 +12,7 @@ import {
   Moon,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 import { motion } from "framer-motion";
 
 interface SidebarLayoutProps {
@@ -61,11 +62,22 @@ const LoadingScreen = () => {
 export default function SidebarLayout({ children }: SidebarLayoutProps) {
   const [theme, setTheme] = useState<"dark" | "light">("dark");
   const [loading, setLoading] = useState(true);
-
   // Loader timeout
   useEffect(() => {
     const timer = setTimeout(() => setLoading(false), 2000);
     return () => clearTimeout(timer);
+  }, []);
+
+  // Auto detect system theme on first load (client only)
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
+      setTimeout(() => {
+        setTheme(prefersDark ? "dark" : "light");
+      }, 0);
+    }
   }, []);
 
   // Apply theme
@@ -129,15 +141,17 @@ export default function SidebarLayout({ children }: SidebarLayoutProps) {
               transition={{ duration: 0.4 }}
               className="flex flex-col items-center mb-8 mt-10"
             >
-              <div className="w-20 h-20 rounded-full overflow-hidden shadow-[0_0_20px_4px_rgba(0,255,0,0.4)]">
-                <Image
-                  src="/logo.jpg"
-                  alt="Profile"
-                  width={200}
-                  height={200}
-                  className="object-cover w-full h-full"
-                />
-              </div>
+              <Link href="/">
+                <div className="w-20 h-20 rounded-full overflow-hidden shadow-[0_0_20px_4px_rgba(0,255,0,0.4)] cursor-pointer">
+                  <Image
+                    src="/logo.jpg"
+                    alt="Profile"
+                    width={200}
+                    height={200}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
+              </Link>
             </motion.div>
 
             {/* Menu */}
@@ -172,15 +186,17 @@ export default function SidebarLayout({ children }: SidebarLayoutProps) {
 
           {/* Mobile Top Bar */}
           <div className="md:hidden fixed top-0 left-0 w-full flex items-center justify-between px-4 py-3 z-40 border-b border-border bg-sidebar text-sidebar-foreground transition-colors">
-            <div className="w-12 h-12 rounded-full overflow-hidden shadow-[0_0_15px_3px_rgba(0,255,0,0.4)]">
-              <Image
-                src="/logo.jpg"
-                alt="Profile"
-                width={60}
-                height={60}
-                className="object-cover w-full h-full"
-              />
-            </div>
+            <Link href="/">
+              <div className="w-12 h-12 rounded-full overflow-hidden shadow-[0_0_15px_3px_rgba(0,255,0,0.4)] cursor-pointer">
+                <Image
+                  src="/logo.jpg"
+                  alt="Profile"
+                  width={60}
+                  height={60}
+                  className="object-cover w-full h-full"
+                />
+              </div>
+            </Link>
 
             {/* Mobile Theme Switch */}
             <div className="flex items-center gap-2">

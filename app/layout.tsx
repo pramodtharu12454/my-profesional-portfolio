@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     "Portfolio",
     "Web Developer Nepal",
   ],
-  authors: [{ name: "Pramod Tharu" }],
-  creator: "Pramod Tharu",
+  authors: [{ name: "Sajilo digital " }],
+  creator: "Sajilo digital",
   robots: {
     index: true,
     follow: true,
